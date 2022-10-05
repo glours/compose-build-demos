@@ -1,0 +1,8 @@
+services:
+  ssh:
+    image: build-test-ssh
+    build:
+      context: .
+      dockerfile: Dockerfile-keys
+      ssh:
+        - fake-ssh=./keys/fake_rsa
