@@ -1,0 +1,16 @@
+services:
+  minecraft:
+    image: itzg/minecraft-server
+    ports:
+      - "25565:25565"
+    environment:
+      EULA: "TRUE"
+      MOTD: "A Vanilla Minecraft Server powered by Docker Compose 🐙"
+    deploy:
+      resources:
+        limits:
+          memory: 2.5G
+    volumes:
+      - minecraft:/data
+volumes:
+  minecraft:
