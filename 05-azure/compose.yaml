@@ -1,0 +1,20 @@
+services:
+  minecraft:
+    image: glours.azurecr.io/itzg/minecraft-server
+    ports:
+      - "25565:25565"
+    environment:
+      EULA: "TRUE"
+      MOTD: "An Azure Minecraft Server powered by Docker Compose"
+    deploy:
+      resources:
+        limits:
+          memory: 1.5G
+    volumes:
+      - glminecraft:/data
+volumes:
+  glminecraft:
+    driver: azure_file
+    driver_opts:
+      share_name: minecraftdocker
+      storage_account_name: glminecraftvol
