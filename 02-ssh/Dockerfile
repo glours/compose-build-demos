@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1.4
-FROM alpine:3.16.2
+FROM alpine:3.15
 
 RUN apk add --no-cache openssh-client git
 RUN mkdir -p -m 0700 ~/.ssh && ssh-keyscan github.com >> ~/.ssh/known_hosts
